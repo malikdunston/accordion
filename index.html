@@ -70,7 +70,7 @@
 	accordions.forEach(accordion => {
 		accordion.addEventListener("click", (event)=>{
 			let child = accordion.nextElementSibling;
-			child.style.maxHeight ? child.style.maxHeight = null : child.style.maxHeight = "500px";
+			child.style.maxHeight ? child.style.maxHeight = null : child.style.maxHeight = child.scrollHeight + "px";
 		})
 	});
 </script>
