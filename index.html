@@ -40,7 +40,7 @@
 	</style>
 </head>
 <body>
-	<div class="container">
+	<div class="container" id="mammals">
 		<h1>Mammals</h1>
 		<div class="menu">
 			<button class="accordion">Feline</button>
@@ -63,5 +63,15 @@
 </body>
 <script>
 
+// 1: get all accordions per container's id.
+	const mammals = document.querySelector("#mammals");
+	const accordions = mammals.querySelectorAll("button.accordion");
+// 2: for each, add event listener...
+	accordions.forEach(accordion => {
+		accordion.addEventListener("click", (event)=>{
+			let child = accordion.nextElementSibling;
+			child.style.maxHeight ? child.style.maxHeight = null : child.style.maxHeight = "500px";
+		})
+	});
 </script>
 </html>
