@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Accordion</title>
+	<style>
+		:root{
+			font-size: 12px;
+			box-sizing: border-box;
+		}
+		body{
+			font-family: sans-serif;
+			background: rgb(232, 232, 232);
+			padding-top: 2em;
+		}
+		.container{
+			padding: 2em;
+			border-radius: .33em;
+			background: rgb(255, 255, 255);
+			max-width: 70vw;
+			margin: 0 auto;
+		}
+		*[class^="accordion"]{
+			margin: 0;
+			display: block;
+			padding: 1em;
+			text-align: left;
+		}
+		button.accordion{
+			width: 100%;
+			border: none;
+			font-weight: bold;
+		}
+		.accordion-box{
+			max-height: 0;
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Mammals</h1>
+		<div class="menu">
+			<button class="accordion">Feline</button>
+			<div class="accordion-box">
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+			</div>
+			<button class="accordion">Canine</button>
+			<div class="accordion-box">
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+			</div>
+			<button class="accordion">Primates</button>
+			<div class="accordion-box">
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+
+</script>
+</html>
