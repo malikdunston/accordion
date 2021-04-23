@@ -20,7 +20,7 @@
 			border-radius: .33em;
 			background: rgb(255, 255, 255);
 			max-width: 70vw;
-			margin: 0 auto;
+			margin: 5em auto;
 		}
 		*[class^="accordion"]{
 			margin: 0;
@@ -42,8 +42,6 @@
 		.accordion-box.open{
 			max-height: 100vh;
 		}
-
-
 	</style>
 </head>
 <body>
@@ -74,20 +72,41 @@
 			</div>
 		</div>
 	</div>
+	<div class="container" id="birds">
+		<h1>Birds</h1>
+		<div class="menu">
+			<button class="accordion">Feline</button>
+			<div class="accordion-box">
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, ! </p>
+			</div>
+			<button class="accordion">Canine</button>
+			<div class="accordion-box">
+				<button class="accordion">Foxes</button>
+				<div class="accordion-box">
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+				</div>
+				<button class="accordion">Dogs</button>
+				<div class="accordion-box">
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 <script>
-// 1: get all accordions per container's id.
-	const mammals = document.querySelector("#mammals");
-	const accordions = mammals.querySelectorAll("button.accordion");
-// 2: for each, add event listener...
-	accordions.forEach(accordion => {
+	document.querySelectorAll("button.accordion").forEach(accordion => {
 		accordion.addEventListener("click", (event)=>{
 			let box = accordion.nextElementSibling;
-			if(!box.classList.contains("open")){
-				box.classList.add("open");
-			}else{
+			!box.classList.contains("open") ?
+				box.classList.add("open") :
 				box.classList.remove("open");
-			}
 		})
 	});
 </script>
