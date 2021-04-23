@@ -12,7 +12,7 @@
 		}
 		body{
 			font-family: sans-serif;
-			background: rgb(102, 11, 11);
+			background: rgb(225, 226, 233);
 			padding-top: 2em;
 		}
 		.container{
@@ -34,9 +34,18 @@
 			font-weight: bold;
 		}
 		.accordion-box{
-			max-height: 0;
+			height: 0;
 			overflow: hidden;
+			transition: height .5s;
 		}
+
+
+		.accordion-box.open{
+			height: auto;
+			background: red;
+		}
+
+
 	</style>
 </head>
 <body>
@@ -58,21 +67,34 @@
 				<div class="accordion-box">
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
 				</div>
 			</div>
 		</div>
 	</div>
 </body>
 <script>
-
 // 1: get all accordions per container's id.
 	const mammals = document.querySelector("#mammals");
 	const accordions = mammals.querySelectorAll("button.accordion");
 // 2: for each, add event listener...
 	accordions.forEach(accordion => {
 		accordion.addEventListener("click", (event)=>{
-			let child = accordion.nextElementSibling;
-			child.style.maxHeight ? child.style.maxHeight = null : child.style.maxHeight = child.scrollHeight + "px";
+			let box = accordion.nextElementSibling;
+			if(!box.classList.contains("open")){
+				box.classList.add("open");
+			}else{
+				box.classList.remove("open");
+			}
+			// if(box.style.maxHeight){
+			// 	box.style.maxHeight = null;
+			// }else{
+			// 	box.style.maxHeight = box.scrollHeight + "px";
+			// }
 		})
 	});
 </script>
