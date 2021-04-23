@@ -34,15 +34,13 @@
 			font-weight: bold;
 		}
 		.accordion-box{
-			height: 0;
+			max-height: 0;
 			overflow: hidden;
-			transition: height .5s;
+			transition: all .5s;
 		}
 
-
 		.accordion-box.open{
-			height: auto;
-			background: red;
+			max-height: 100vh;
 		}
 
 
@@ -90,11 +88,6 @@
 			}else{
 				box.classList.remove("open");
 			}
-			// if(box.style.maxHeight){
-			// 	box.style.maxHeight = null;
-			// }else{
-			// 	box.style.maxHeight = box.scrollHeight + "px";
-			// }
 		})
 	});
 </script>
