@@ -44,3 +44,7 @@
 		</second>
 	</parent>
 
+## Refereces
+
+	-	addeventlistener vs onclick:
+		https://stackoverflow.com/questions/6348494/addeventlistener-vs-onclick

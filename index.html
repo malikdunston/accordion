@@ -6,40 +6,58 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Accordion</title>
 	<style>
-		.fold > div:nth-child(2){
+		.fold > *:nth-child(2){
 			max-height: 0px;
 			overflow: hidden;
 		}
-		.fold.open > div:nth-child(2){
+		.fold.open > *:nth-child(2){
 			max-height: 100vh;
 		}
 	</style>
 </head>
 <body>
 	<span class="fold">
-		<button>Wide Recievers</button>
+		<button>Wide Receivers</button>
 		<div>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-			<ul>
-				<li>N'Keal Harry</li>
-				<li>Nelson Agholor</li>
-				<li>Jakobi Meyers</li>
-				<li>Gunner Olszewski</li>
-			</ul>
+			<!-- <div class="fold">
+				<button>about</button> -->
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </br>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </br>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </br>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!
+				</p>
+			<!-- </div>
+			<ul class="fold">
+				<div>depth chart</div>
+				<ul>
+					<li>N'Keal Harry</li>
+					<li>Nelson Agholor</li>
+					<li>Jakobi Meyers</li>
+					<li>Gunner Olszewski</li>
+				</ul>
+			</ul> -->
+			<div class="fold">
+				<div>Linebacker Coaches</div>
+				<ul>
+					<li>Bob Johnson</li>
+					<li>Ted Wilson</li>
+					<li>Josh Belichick</li>
+				</ul>
+			</div>
 		</div>
 	</span>
 	<section class="fold">
 		<div>Linebackers</div>
 		<div>
-			<h2>82/100</h2>
-			<ul>
-				<li>Ju'Whaun Bentley</li>
-				<li>Dont'a Hightower</li>
-				<li>Kyle Van Noy</li>
-			</ul>
+			<!-- <div class="fold"> -->
+				<h2>82/100</h2>
+				<ul>
+					<li>Ju'Whaun Bentley</li>
+					<li>Dont'a Hightower</li>
+					<li>Kyle Van Noy</li>
+				</ul>
+			<!-- </div> -->
 			<div class="fold">
 				<div>Linebacker Coaches</div>
 				<div>
@@ -51,6 +69,11 @@
 		</div>
 	</section>
 	<script>
+		const data = {
+			wide_receivers: {
+				about: ""
+			}
+		}
 		document.querySelectorAll(".fold > *:nth-child(1)").forEach(elem => {
 			elem.addEventListener("click", ()=>{
 				elem.parentElement.classList.toggle("open");
