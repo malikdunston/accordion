@@ -6,79 +6,51 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Accordion</title>
 	<style>
-	/*  visual styles  */	
-		:root{
-			font-size: 12px;
-		}
-		*{
-			box-sizing: border-box;
-		}
-		body{
-			font-family: sans-serif;
-			background: rgb(225, 226, 233);
-			padding-top: 2em;
-		}
-		body > section{
-			border-radius: .33em;
-			background: rgb(255, 255, 255);
-			max-width: 70vw;
-			margin: 5em auto;
-		}
-		section
-
 	/*  functional styles  */	
-		*[class^="accordion"]{
-			margin: 0;
-			display: block;
-		}
-		button.accordion{
-			padding: 1em;
-			text-align: left;
-			width: 100%;
-			border: none;
-			font-weight: bold;
-		}
-		.accordion-box{
+		section > div > div:nth-child(2){
 			max-height: 0px;
 			overflow: hidden;
-			transition: all .5s;
 		}
-		.accordion-box.open{
+		section > div.open > div:nth-child(2){
 			max-height: 100vh;
 		}
 	</style>
 </head>
 <body>
 	<section>
-		<div class="menu">
-			<button class="accordion">Canine</button>
-			<div class="accordion-box">
-				<button class="accordion">Foxes</button>
-				<div class="accordion-box">
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-				</div>
-				<button class="accordion">Dogs</button>
-				<div class="accordion-box">
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-				</div>
+		<div>
+			<div>Wide Reciever</div>
+			<div>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+				<ul>
+					<li>N'Keal Harry</li>
+					<li>Nelson Agholor</li>
+					<li>Jakobi Meyers</li>
+					<li>Gunner Olszewski</li>
+				</ul>
+			</div>
+		</div>
+		<div>
+			<div>Linebacker</div>
+			<div>
+				<h2>82/100</h2>
+				<ul>
+					<li>Ju'Whaun Bentley</li>
+					<li>Dont'a Hightower</li>
+					<li>Kyle Van Noy</li>
+				</ul>
 			</div>
 		</div>
 	</section>
 </body>
 <script>
-	document.querySelectorAll("button.accordion").forEach(accordion => {
-		accordion.addEventListener("click", (event)=>{
-			let box = accordion.nextElementSibling;
-			!box.classList.contains("open") ?
-				box.classList.add("open") :
-				box.classList.remove("open");
+	document.querySelectorAll("section > div > div:nth-child(1)").forEach(button => {
+		button.addEventListener("click", (event)=>{
+			let box = button.nextElementSibling;
+			let parent = button.parentElement;
+			!parent.classList.contains("open") ?
+				parent.classList.add("open") :
+				parent.classList.remove("open");
 		})
 	});
 </script>

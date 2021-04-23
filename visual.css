@@ -1,0 +1,26 @@
+	/*  visual styles  */	
+		:root{
+			font-size: 12px;
+		}
+		*{
+			box-sizing: border-box;
+		}
+		body{
+			font-family: sans-serif;
+			background: rgb(225, 226, 233);
+			padding-top: 2em;
+		}
+		section{
+			border-radius: .33em;
+			background: white;
+			max-width: 70vw;
+			margin: 5em auto;
+		}
+		section > div > div:nth-child(1){
+			padding: 1em;
+			text-align: left;
+			font-weight: bold;
+		}
+		section > div > div:nth-child(2){
+			transition: all 5s;
+		}
