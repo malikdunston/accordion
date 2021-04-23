@@ -6,8 +6,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Accordion</title>
 	<style>
+	/*  visual styles  */	
 		:root{
 			font-size: 12px;
+		}
+		*{
 			box-sizing: border-box;
 		}
 		body{
@@ -15,38 +18,37 @@
 			background: rgb(225, 226, 233);
 			padding-top: 2em;
 		}
-		.container{
-			padding: 2em;
+		body > section{
 			border-radius: .33em;
 			background: rgb(255, 255, 255);
 			max-width: 70vw;
 			margin: 5em auto;
 		}
+
+	/*  functional styles  */	
 		*[class^="accordion"]{
 			margin: 0;
 			display: block;
-			padding: 1em;
-			text-align: left;
 		}
 		button.accordion{
+			padding: 1em;
+			text-align: left;
 			width: 100%;
 			border: none;
 			font-weight: bold;
 		}
 		.accordion-box{
-			max-height: 0;
+			max-height: 0px;
 			overflow: hidden;
 			transition: all .5s;
 		}
-
 		.accordion-box.open{
 			max-height: 100vh;
 		}
 	</style>
 </head>
 <body>
-	<div class="container" id="mammals">
-		<h1>Mammals</h1>
+	<section>
 		<div class="menu">
 			<button class="accordion">Feline</button>
 			<div class="accordion-box">
@@ -71,34 +73,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="container" id="birds">
-		<h1>Birds</h1>
-		<div class="menu">
-			<button class="accordion">Feline</button>
-			<div class="accordion-box">
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, ! </p>
-			</div>
-			<button class="accordion">Canine</button>
-			<div class="accordion-box">
-				<button class="accordion">Foxes</button>
-				<div class="accordion-box">
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-				</div>
-				<button class="accordion">Dogs</button>
-				<div class="accordion-box">
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-				</div>
-			</div>
-		</div>
-	</div>
+	</section>
 </body>
 <script>
 	document.querySelectorAll("button.accordion").forEach(accordion => {
