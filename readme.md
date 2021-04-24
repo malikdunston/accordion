@@ -48,10 +48,25 @@
 
 	-	addeventlistener vs onclick:
 		https://stackoverflow.com/questions/6348494/addeventlistener-vs-onclick
+		-	addeventlisteners cascade, onclicks do not, basically...
+
 	-	Hoisting Explained by 5-minute web dev:
 		https://www.youtube.com/watch?v=AplVrrwY1TI&t=123s
 		-	notes:
+			-	You don't really need to hoist stuff unless you just want to organize your functions at the end/bottom of the page. 
+				-	"no reason to make things more confusing than they need to be."
+			-	undeclared assignments are in the global scope.
+				-	example:
+
+					function hey(){
+						thisVar = "Hello I'm ";
+						var newVar = thisVar + "Malik";
+						return newVar;
+					}
+					console.log(hey());
+
 			-	execution phase vs compile phase.
+				-	var declarations are STORED IN MEMORY during compile.
 				-	var declarations are hoisted during compile, but not assignments...
 					example:
 
@@ -72,6 +87,7 @@
 						var stuff;
 					}
 					do();
-			-	basically, if you use a named function, it can go anywhere in the page, script tag can go anywhere in the html, etc....
+
+			-	Named functions can go anywhere in the page, script tag can go anywhere in the html, etc....
 				-	However, it is better practice to declare vars as anon functions. The browser saves these during compile phase, which is less performant.
 

@@ -1,10 +1,10 @@
 const accordion = function(data, elem){
 	for(key of Object.keys(data)){
 	// wrapper
-		fold = document.createElement("div");
+		let fold = document.createElement("div");
 		fold.classList.add("fold", key);
 	// each fold has to have two children...
-		btn = document.createElement("button"); cont = document.createElement("div");
+		let btn = document.createElement("button"), cont = document.createElement("div");
 	// btn
 		btn.innerHTML = key;
 		btn.addEventListener("click", ()=>{
@@ -12,7 +12,6 @@ const accordion = function(data, elem){
 		})
 		fold.appendChild(btn);
 	// cont
-		console.log(typeof data[key]);
 		if(typeof data[key] == "string"){
 			cont.innerHTML = data[key];
 		} else if(typeof data[key] == "object"){
@@ -29,9 +28,11 @@ const accordion = function(data, elem){
 
 // let domElem = accordion(siteData, document.querySelector(".accordion:nth-of-type(1)"));
 
-function issaFunc(){
-	thisVar = "Hello I'm ";
-	var newVar = thisVar + "Malik";
-	return newVar;
+let sum = document.createElement("article");
+let make = function(elem){
+	sumElse = document.createElement("button");
+	sumElse.innerHTML = "button";
+	elem.appendChild(sumElse);
+	return elem;
 }
-console.log(issaFunc());
+console.log(make(sum));
