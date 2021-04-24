@@ -16,11 +16,12 @@ const accordion = function(data, elem){
 		}
 		elem.appendChild(wrapper);
 	}
+	return elem;
 }
-accordion(siteData, document.querySelector(".accordion"));
+let domElem = accordion(siteData, document.querySelector(".accordion:nth-of-type(1)"));
 document.querySelectorAll(".fold > *:nth-child(1)").forEach(elem => {
 	elem.addEventListener("click", ()=>{
 		elem.parentElement.classList.toggle("open");
 	})
 });
-console.log(app, document.querySelector("#example"));
+// console.log(app, document.querySelector("#example"));
