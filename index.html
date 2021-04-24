@@ -6,11 +6,26 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Accordion</title>
 	<link rel="stylesheet" href="index.css">
-	<link rel="stylesheet" href="visuals.css">
+	<script src="data.js"></script>
 </head>
 <body>
-	<section id="app"></section>
-	<section id="example">
+
+	<h1>JSON</h1>
+	<section class="accordion"></section>
+
+	<h1>Vanilla HTML</h1>
+	<section class="accordion">
+		<span class="fold">
+			<button>quarterbacks</button>
+			<div>
+				<span class="fold">
+					<button>about</button>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum!
+					</p>
+				</span>
+			</div>
+		</span>
 		<span class="fold">
 			<button>Wide Receivers</button>
 			<div>
@@ -34,7 +49,7 @@
 			</div>
 		</span>
 		<section class="fold">
-			<div>Linebackers</div>
+			<button>Linebackers</button>
 			<div>
 				<h2>Depth Chart</h2>
 				<ul>
@@ -53,6 +68,19 @@
 			</div>
 		</section>
 	</section>
+
+	<h1>Base</h1>
+	<section class="accordion">
+		<div class="fold">
+			<button>Title</button>
+			<div>Contents go here!</div>
+		</div>
+		<div class="fold">
+			<button>Two</button>
+			<div>Contents go here!</div>
+		</div>
+	</section>
+
 <script src="accordion.js"></script>
 </body>
 </html>
