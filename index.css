@@ -1,0 +1,7 @@
+.fold > *:nth-child(2){
+	max-height: 0px;
+	overflow: hidden;
+}
+.fold.open > *:nth-child(2){
+	max-height: 100vh;
+}

@@ -22,5 +22,5 @@ section > div > div:nth-child(1){
 	font-weight: bold;
 }
 section > div > div:nth-child(2){
-	transition: all 5s;
+	/* transition: all 5s; */
 }
