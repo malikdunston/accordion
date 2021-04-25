@@ -1,5 +1,8 @@
 const accordion = function(data, elem){
-	if(typeof data == "object"){
+	if(typeof data == "string"){
+		elem.innerHTML = data;
+	} 
+	else if(typeof data == "object"){
 		if (Array.isArray(data)){
 			data.forEach(arrChild => {
 				console.log(typeof arrChild);
@@ -15,17 +18,12 @@ const accordion = function(data, elem){
 				btn.parentElement.classList.toggle("open");
 			});
 		// cont
-			if(typeof data[key] == "string"){
-				cont.innerHTML = data[key];
-			} else if(typeof data[key] == "object"){
-				// start here with the array stuff...
-				// if (Array.isArray(data[key])){
-					// data[key].forEach(arrChild => {
-					// 	console.log(typeof arrChild);
-					// })
-				// };
+			// if(typeof data[key] == "string"){
+			// 	cont.innerHTML = data[key];
+			// } 
+			// if(typeof data[key] == "object"){
 				accordion(data[key], cont);
-			}
+			// }
 		// fold
 			fold.appendChild(btn);
 			fold.appendChild(cont);
