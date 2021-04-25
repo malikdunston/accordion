@@ -5,22 +5,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Accordion</title>
-	<style>
-		@import "visuals.css";
-	/*  do this in js....  */
-	/*  var cont  */
-		.fold > *:nth-child(2){
-			overflow: hidden;
-			max-height: 0px;
-			margin: 0;
-		}
-	/* callback since .open??? */
-		.fold.open > *:nth-child(2){
-			max-height: 100vh;
-		}
-	</style>
 	<script src="data.js"></script>
 	<script src="accordion.js"></script>
+<!-- Optional styles -->
+	<link rel="stylesheet" href="visuals.css">
 </head>
 <body>
 	<section class="accordion"></section>
