@@ -91,3 +91,15 @@
 			-	Named functions can go anywhere in the page, script tag can go anywhere in the html, etc....
 				-	However, it is better practice to declare vars as anon functions. The browser saves these during compile phase, which is less performant.
 
+## Wishlist/To-dos
+
+	-	normalize all of the if/else blocks into one block below either a switch/case or if/else series
+		-	research if/else vs swich/case performance
+	-	no externall css - just in accordion.js
+	-	one js file, one html file
+	-	horizontal scroll version?
+	-	toggle mouseover????
+	-	use event.target obj to fill a hovering div with the path of whatever dom element you're mousing over.
+		-	ex: "qbs -> depth_chart -> xyz_player"
+	-	turn underscore or camelcase into two different words.
+		-	then perhaps capitalize but don't do too much w/that. plenty of resources. gotta know when to stop.

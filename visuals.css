@@ -6,21 +6,23 @@
 }
 body{
 	font-family: sans-serif;
+	font-size: 1rem; 
+	line-height: 1.5rem;
 	background: rgb(225, 226, 233);
-	padding-top: 2em;
+	padding-top: 2;
 }
 .accordion{
-	border-radius: .33em;
+	border-radius: .33rem;
 	background: white;
 	max-width: 70vw;
-	margin: 5em auto;
+	margin: 5rem auto;
 }
 .fold > *{
-	padding: 0 1em;
+	padding: 0 1rem;
 }
 .fold > *:nth-child(1){
 	background: rgb(237, 237, 237);
-	padding: 1em;
+	padding: 1rem;
 	text-align: left;
 	font-weight: bold;
 	width: 100%;
@@ -30,6 +32,6 @@ body{
 	transition: max-height .5s ease-in, padding .5s ease-in;
 }
 .fold.open > *:nth-child(2){
-	padding-top: 1em;
-	padding-bottom: 1em;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
 }
