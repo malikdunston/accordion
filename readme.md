@@ -91,10 +91,17 @@
 			-	Named functions can go anywhere in the page, script tag can go anywhere in the html, etc....
 				-	However, it is better practice to declare vars as anon functions. The browser saves these during compile phase, which is less performant.
 
+## done
+
+#### 4/25
+
+	-	normalize all of the if/else blocks dom manipulation into one block below either a switch/case or if/else series
+		-	research if/else vs swich/case performance
+			-	switch only really better if there's lots of blocks.
+			-	only three blocks.
+
 ## Wishlist/To-dos
 
-	-	normalize all of the if/else blocks into one block below either a switch/case or if/else series
-		-	research if/else vs swich/case performance
 	-	no externall css - just in accordion.js
 	-	one js file, one html file
 	-	horizontal scroll version?

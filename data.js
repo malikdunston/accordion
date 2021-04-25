@@ -26,7 +26,8 @@ const siteData = {
 	cornerbacks: [
 		"<h2>Depth Chart</h2><ul><li>Stephon Gilmore</li><li>JC Jackson</li><li>Johnathan Jones</li></ul>",
 		{
-			cb_coaches: "<div><h5>Bob Johnson</h5><h5>Ted Wilson</h5><h5>Josh Belichick</h5></div>"
+			cb_coaches: "<div><h5>Bob Johnson</h5><h5>Ted Wilson</h5><h5>Josh Belichick</h5></div>",
+			random_number: 30937
 		}
 	]
 };

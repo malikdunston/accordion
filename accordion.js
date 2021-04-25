@@ -1,5 +1,5 @@
 const accordion = function(data, elem){
-	if(typeof data == "string"){
+	if(typeof data == "string" || typeof data == "number"){
 		elem.innerHTML = data;
 	}else if(typeof data == "object" && !Array.isArray(data)){
 		let obj = [];
