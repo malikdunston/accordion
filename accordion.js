@@ -6,16 +6,31 @@ const accordion = function(data, elem){
 			elem.innerHTML = item;
 		}
 	}else if(typeof data == "object" && !Array.isArray(data)){
-		$data.push(Object.keys(data));
-		for(key of Object.keys(data)){
+		Object.keys(data).forEach(key => {
+			$data.push([key, data[key]]);
+		});
+		compile($data)
+	}else if(Array.isArray(data)){
+		$data = data;
+		for(item of $data){
+			let cont = document.createElement("div"), fold = document.createElement("div");
+		// cont
+			accordion(item, cont);
+		// fold
+			fold.appendChild(cont);
+			elem.appendChild(fold);
+		}
+	}
+	function compile($data){
+		for(item of $data){
 			let btn = document.createElement("button"), cont = document.createElement("div"), fold = document.createElement("div");
 		// btn
-			btn.innerHTML = key;
+			btn.innerHTML = item[0];
 			btn.addEventListener("click", ()=>{
 				btn.parentElement.classList.toggle("open");
 			});
 		// cont
-			accordion(data[key], cont);
+			accordion(item[1], cont);
 		// fold
 			fold.appendChild(btn);
 			fold.appendChild(cont);
@@ -28,19 +43,6 @@ const accordion = function(data, elem){
 			})
 			elem.appendChild(fold);
 		}
-	}else if(Array.isArray(data)){
-		$data = data;
-		for(item of data){
-			let cont = document.createElement("div"), fold = document.createElement("div");
-		// cont
-			accordion(item, cont);
-		// fold
-			fold.appendChild(cont);
-			elem.appendChild(fold);
-		}
-	}
-	for(item of $data){
-		// normalized code from above if/else chain...
 	}
 	return elem;
 }

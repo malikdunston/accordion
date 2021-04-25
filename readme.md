@@ -107,4 +107,7 @@
 ## notes...
 
 	-	you can split one obj up by using obj.props as arg for accordion().
+		-	this can also be automated.
+			-	new elem("div.accordion.xyz")
+			-	accordion(siteData[xyzVar])
 	-	You can also nest items inside accordion beforehand.
