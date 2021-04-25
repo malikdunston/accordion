@@ -103,3 +103,8 @@
 		-	ex: "qbs -> depth_chart -> xyz_player"
 	-	turn underscore or camelcase into two different words.
 		-	then perhaps capitalize but don't do too much w/that. plenty of resources. gotta know when to stop.
+
+## notes...
+
+	-	you can split one obj up by using obj.props as arg for accordion().
+	-	You can also nest items inside accordion beforehand.

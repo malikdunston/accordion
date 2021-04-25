@@ -9,11 +9,10 @@ body{
 	font-size: 1rem; 
 	line-height: 1.5rem;
 	background: rgb(225, 226, 233);
-	padding-top: 2;
+	padding-top: 2rem;
 }
 .accordion{
 	border-radius: .33rem;
-	background: white;
 	max-width: 70vw;
 	margin: 5rem auto;
 }
@@ -29,6 +28,7 @@ body{
 	border: none;
 }
 .fold > *:nth-child(2){
+	background: white;
 	transition: max-height .5s ease-in, padding .5s ease-in;
 }
 .fold.open > *:nth-child(2){
