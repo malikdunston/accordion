@@ -1,6 +1,10 @@
 const accordion = function(data, elem){
 	if(typeof data == "object"){
 		if (Array.isArray(data)){
+			data.forEach(arrChild => {
+				console.log(typeof arrChild);
+			})
+		}else{
 
 		}
 		for(key of Object.keys(data)){
@@ -15,10 +19,11 @@ const accordion = function(data, elem){
 				cont.innerHTML = data[key];
 			} else if(typeof data[key] == "object"){
 				// start here with the array stuff...
-				if (Array.isArray(data[key])){
-					console.log(data[key]);
-
-				};
+				// if (Array.isArray(data[key])){
+					// data[key].forEach(arrChild => {
+					// 	console.log(typeof arrChild);
+					// })
+				// };
 				accordion(data[key], cont);
 			}
 		// fold
