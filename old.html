@@ -21,18 +21,18 @@
 			max-width: 70vw;
 			margin: 0 auto;
 		}
-		*[class^="accordion"]{
+		.fold > *{
 			margin: 0;
 			display: block;
 			padding: 1em;
 			text-align: left;
 		}
-		button.accordion{
+		.fold > *:nth-child(1){
 			width: 100%;
 			border: none;
 			font-weight: bold;
 		}
-		.accordion-box{
+		.fold > *:nth-child(2){
 			max-height: 0;
 			overflow: hidden;
 		}
@@ -41,31 +41,24 @@
 <body>
 	<div class="container" id="mammals">
 		<h1>Mammals</h1>
-		<div class="menu">
+		<div class="fold">
 			<button class="accordion">Feline</button>
 			<div class="accordion-box">
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-			</div>
-			<button class="accordion">Canine</button>
-			<div class="accordion-box">
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-			</div>
-			<button class="accordion">Primates</button>
-			<div class="accordion-box">
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
 			</div>
 		</div>
 	</div>
 </body>
 <script>
+	const data = {
+		
+	}
+	const accordion = function (data, elem){
+		let fold = document.createElement("div");
 
-// 1: get all accordions per container's id.
-	const mammals = document.querySelector("#mammals");
+		return elem
+	}
 	const accordions = mammals.querySelectorAll("button.accordion");
-// 2: for each, add event listener...
 	accordions.forEach(accordion => {
 		accordion.addEventListener("click", (event)=>{
 			let child = accordion.nextElementSibling;
