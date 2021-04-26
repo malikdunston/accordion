@@ -1,11 +1,9 @@
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Accordion</title>
+	<title>Old ________Accordion</title>
 	<style>
 		:root{
 			font-size: 12px;
@@ -13,7 +11,7 @@
 		}
 		body{
 			font-family: sans-serif;
-			background: rgb(225, 226, 233);
+			background: rgb(232, 232, 232);
 			padding-top: 2em;
 		}
 		.container{
@@ -35,18 +33,9 @@
 			font-weight: bold;
 		}
 		.accordion-box{
-			height: 0;
+			max-height: 0;
 			overflow: hidden;
-			transition: height .5s;
 		}
-
-
-		.accordion-box.open{
-			height: auto;
-			background: red;
-		}
-
-
 	</style>
 </head>
 <body>
@@ -55,47 +44,32 @@
 		<div class="menu">
 			<button class="accordion">Feline</button>
 			<div class="accordion-box">
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, ! </p>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
 			</div>
 			<button class="accordion">Canine</button>
 			<div class="accordion-box">
-				<button class="accordion">Foxes</button>
-				<div class="accordion-box">
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-				</div>
-				<button class="accordion">Dogs</button>
-				<div class="accordion-box">
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
-				</div>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+			</div>
+			<button class="accordion">Primates</button>
+			<div class="accordion-box">
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
 			</div>
 		</div>
 	</div>
 </body>
 <script>
+
 // 1: get all accordions per container's id.
 	const mammals = document.querySelector("#mammals");
 	const accordions = mammals.querySelectorAll("button.accordion");
 // 2: for each, add event listener...
 	accordions.forEach(accordion => {
 		accordion.addEventListener("click", (event)=>{
-			let box = accordion.nextElementSibling;
-			if(!box.classList.contains("open")){
-				box.classList.add("open");
-			}else{
-				box.classList.remove("open");
-			}
-			// if(box.style.maxHeight){
-			// 	box.style.maxHeight = null;
-			// }else{
-			// 	box.style.maxHeight = box.scrollHeight + "px";
-			// }
+			let child = accordion.nextElementSibling;
+			child.style.maxHeight ? child.style.maxHeight = null : child.style.maxHeight = "500px";
 		})
 	});
 </script>
