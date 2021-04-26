@@ -44,6 +44,19 @@
 		</second>
 	</parent>
 
+- Easiest way to set up:
+
+	<script></script>
+	<parent></parent>
+	<script>
+		let data = async () => {
+			// await http call for data, etc
+			return data
+		}
+		let elem = document.querySelector("parent");
+		accordion(data, elem);
+	</script>
+
 ## Refereces
 
 	-	addeventlistener vs onclick:
@@ -99,17 +112,37 @@
 		-	research if/else vs swich/case performance
 			-	switch only really better if there's lots of blocks.
 			-	only three blocks.
+	-	no externall css - just in accordion.js
+	-	one js file, one html file
+		-	two for now, one is just the data.
+
+## Bugs
+
+	-	scrollHeight not computing........
+
+
 
 ## Wishlist/To-dos
 
-	-	no externall css - just in accordion.js
-	-	one js file, one html file
+	-	table version?
 	-	horizontal scroll version?
-	-	toggle mouseover????
+	-	idenfify the level of nesting of a given data/elem...
+		-	optional arg to limit levels on a given obj
+		-	toggle mouseover????
+		-	variable tags for fold, btn, cont...
+	-	add .open to specific folds anywhere in a variable list of accordions based on:
+		-	search criteria
+		-	prop values (maybe same as above?)
+		-	prop types (typeof, array.isarray(), etc...)
 	-	use event.target obj to fill a hovering div with the path of whatever dom element you're mousing over.
 		-	ex: "qbs -> depth_chart -> xyz_player"
 	-	turn underscore or camelcase into two different words.
 		-	then perhaps capitalize but don't do too much w/that. plenty of resources. gotta know when to stop.
+	-	lock .folds:
+		-	and all children?
+		-	same for close all
+	-	if other .folds are .open, and you click on a .fold > .btn anywhere:
+		-	remove .open from everything else then add to the button you clicked...
 
 ## notes...
 

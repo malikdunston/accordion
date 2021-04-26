@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Accordion</title>
+	<style>
+		:root{
+			font-size: 12px;
+			box-sizing: border-box;
+		}
+		body{
+			font-family: sans-serif;
+			background: rgb(225, 226, 233);
+			padding-top: 2em;
+		}
+		.container{
+			padding: 2em;
+			border-radius: .33em;
+			background: rgb(255, 255, 255);
+			max-width: 70vw;
+			margin: 0 auto;
+		}
+		*[class^="accordion"]{
+			margin: 0;
+			display: block;
+			padding: 1em;
+			text-align: left;
+		}
+		button.accordion{
+			width: 100%;
+			border: none;
+			font-weight: bold;
+		}
+		.accordion-box{
+			height: 0;
+			overflow: hidden;
+			transition: height .5s;
+		}
+
+
+		.accordion-box.open{
+			height: auto;
+			background: red;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="container" id="mammals">
+		<h1>Mammals</h1>
+		<div class="menu">
+			<button class="accordion">Feline</button>
+			<div class="accordion-box">
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, ! </p>
+			</div>
+			<button class="accordion">Canine</button>
+			<div class="accordion-box">
+				<button class="accordion">Foxes</button>
+				<div class="accordion-box">
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+				</div>
+				<button class="accordion">Dogs</button>
+				<div class="accordion-box">
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! </p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+// 1: get all accordions per container's id.
+	const mammals = document.querySelector("#mammals");
+	const accordions = mammals.querySelectorAll("button.accordion");
+// 2: for each, add event listener...
+	accordions.forEach(accordion => {
+		accordion.addEventListener("click", (event)=>{
+			let box = accordion.nextElementSibling;
+			if(!box.classList.contains("open")){
+				box.classList.add("open");
+			}else{
+				box.classList.remove("open");
+			}
+			// if(box.style.maxHeight){
+			// 	box.style.maxHeight = null;
+			// }else{
+			// 	box.style.maxHeight = box.scrollHeight + "px";
+			// }
+		})
+	});
+</script>
+</html>
