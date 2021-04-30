@@ -1,4 +1,51 @@
 const accordion = function(data, elem){
+
+
+	switch (typeof data){
+		case "string":
+			console.log("string: ", data);
+		case "number":
+			console.log("number: ", data);
+			return(elem.innerHTML = data);
+		case "object":
+			console.log("object: ", data);
+			for(x in data){
+				console.log(x);
+			}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	return elem;
+}
+
+
+
+
+
+
+
+
+
+const old_accordion = function(data, elem){
 	let obj = [];
 	if(typeof data == "string" || typeof data == "number"){
 		elem.innerHTML = data;
