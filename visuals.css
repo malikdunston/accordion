@@ -14,7 +14,8 @@ body{
 .accordion{
 	border-radius: .33rem;
 	max-width: 80vw;
-	margin: 5rem auto;
+	margin: 0 auto;
+	overflow: hidden;
 }
 .fold > *{
 	padding: 0 1rem;
