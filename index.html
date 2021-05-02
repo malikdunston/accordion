@@ -5,13 +5,34 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Accordion</title>
-	<script src="data.js"></script>
+	<script>
+		const arr = [
+			"Person",
+			{about: 'Web Dev', age: "29"},
+			{skills: [
+				"PS",
+				"VSCode"
+			]}
+		];
+		const obj = {
+			name: arr[0],
+			details: arr[1],
+			work: arr[2]
+		};
+		const log = msg => {
+			Array.isArray(msg) ?	
+				msg.forEach(m => console.log(m)) :
+				console.log(msg);
+		}
+	</script>
 	<script src="accordion.js"></script>
 <!-- Optional styles -->
 	<link rel="stylesheet" href="visuals.css">
 </head>
 <body>
-	<section class="accordion"></section>
-	<script>accordion(siteData, document.querySelector(".accordion"));</script>
+	<section class="obj"></section>
+	<script>accordion(obj, document.querySelector(".obj"));</script>
+	<section class="arr"></section>
+	<script>accordion(arr, document.querySelector(".arr"));</script>
 </body>
 </html>

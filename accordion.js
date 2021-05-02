@@ -1,40 +1,51 @@
 const accordion = function(data, elem){
-
-
 	switch (typeof data){
 		case "string":
-			console.log("string: ", data);
 		case "number":
-			console.log("number: ", data);
 			return(elem.innerHTML = data);
 		case "object":
-			console.log("object: ", data);
-			for(x in data){
-				console.log(x);
+			counter = 0;
+			for([key, value] of Object.entries(data)){
+
+				// info = [counter, x, data[x]];
+				info = [counter, key, value]
+
+				if(Array.isArray(data)){
+					console.log("array:  ", info);
+				}else{
+					console.log("obj:  ", info);
+				}
+				// accordion(data[x], elem)
+
+
+
+				counter++;
 			}
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	// log([data, elem]);
+	// console.log([data, elem]);
 	return elem;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 
@@ -47,15 +58,15 @@ const accordion = function(data, elem){
 
 const old_accordion = function(data, elem){
 	let obj = [];
-	if(typeof data == "string" || typeof data == "number"){
-		elem.innerHTML = data;
-	}else if(typeof data == "object"){
-		Object.keys(data).forEach(key => {
-			obj.push([key, data[key]]);
-		});
-		if(Array.isArray(data)){
-			obj = data;
-		}
+	// if(typeof data == "string" || typeof data == "number"){
+	// 	elem.innerHTML = data;
+	// }else if(typeof data == "object"){
+		// Object.keys(data).forEach(key => {
+		// 	obj.push([key, data[key]]);
+		// });
+		// if(Array.isArray(data)){
+		// 	obj = data;
+		// }
 		for(item of obj){
 			let btn = document.createElement("button"), cont = document.createElement("div"), fold = document.createElement("div");
 			if (item.length == 2){ // object!
@@ -87,6 +98,6 @@ const old_accordion = function(data, elem){
 			fold.appendChild(cont);
 			elem.appendChild(fold);
 		}
-	}
+	// }
 	return elem;
 }

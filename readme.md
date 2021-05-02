@@ -116,6 +116,11 @@
 	-	one js file, one html file
 		-	two for now, one is just the data.
 
+#### 4/30
+
+	-	for(x in data){ ...iterate through either obj or array... }
+		-	#s not allowed at beginning of json keys, distinguishing array objs from js objects.
+
 ## Bugs
 
 	-	scrollHeight not computing........
