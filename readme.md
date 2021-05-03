@@ -59,6 +59,9 @@
 
 ## Refereces
 
+	-	find all parents of a node using while.
+		https://stackoverflow.com/questions/8729193/how-to-get-all-parent-nodes-of-given-element-in-pure-javascript
+
 	-	addeventlistener vs onclick:
 		https://stackoverflow.com/questions/6348494/addeventlistener-vs-onclick
 		-	addeventlisteners cascade, onclicks do not, basically...
@@ -156,3 +159,4 @@
 			-	new elem("div.accordion.xyz")
 			-	accordion(siteData[xyzVar])
 	-	You can also nest items inside accordion beforehand.
+	-	

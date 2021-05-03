@@ -10,42 +10,40 @@ const accordion = function (data, elem) {
 					cont = document.createElement("div"),
 					fold = document.createElement("div");
 				if (!Array.isArray(data)) {
-					// btn
+				// btn
 					btn.innerHTML = key;
-				// maybe add evlist to fold, then use event.target to select btn.
-				// do this to bundle all fold code into a "compile"
-					btn.addEventListener("click", event => {
-						console.log(findParents(btn));
-						cont.style.maxHeight !== "0px" ?
-							cont.style.maxHeight = "0px" :
-							cont.style.maxHeight = "500vh";
-						fold.classList.toggle("open");
-					});
-					// cont
+					btn.classList.add("btn");
+				// cont
 					cont.style.overflow = "hidden";
 					cont.style.maxHeight = "0px";
 					cont.style.margin = "0px";
-					// fold
+				// fold
 					fold.appendChild(btn);
 					fold.appendChild(cont);
 					fold.classList.add("fold");
 				}
 				accordion(value, cont);
 				fold.appendChild(cont);
+				fold.addEventListener("click", event => {
+					if(parentsOf(event.target)[0].classList.contains("btn") ){
+						cont.style.maxHeight !== "0px" ?
+							cont.style.maxHeight = "0px" :
+							cont.style.maxHeight = "500vh";
+						fold.classList.toggle("open");
+					}else console.log("you didn't click on a button");
+				});
 				elem.appendChild(fold);
 				counter++;
 			}
 			return elem;
 	}
-// find all parent elems of an elem...
-// want to make all parents overflow = whatever... 
-// from https://stackoverflow.com/questions/8729193/how-to-get-all-parent-nodes-of-given-element-in-pure-javascript
-	function findParents(e){
+	function parentsOf(e){
 		var els = [];
 		while (e) {
-			els.unshift(e);
+			els.push(e);
 			e = e.parentNode;
 		}
+		els.length -= 3; // remove doc, html, body...
 		return els;
 	}
 }
