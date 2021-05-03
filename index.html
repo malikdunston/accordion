@@ -19,10 +19,13 @@
 			details: arr[1],
 			work: arr[2]
 		};
-		const log = msg => {
-			Array.isArray(msg) ?	
-				msg.forEach(m => console.log(m)) :
-				console.log(msg);
+		const num = 20 + 24;
+		const str = "hello i'm just a string. :) Shoutout to " + num;
+		const everything = {
+			obj,
+			arr,
+			num,
+			str
 		}
 	</script>
 	<script src="accordion.js"></script>
@@ -34,5 +37,11 @@
 	<script>accordion(obj, document.querySelector(".obj"));</script>
 	<section class="arr"></section>
 	<script>accordion(arr, document.querySelector(".arr"));</script>
+	<section class="num"></section>
+	<script>accordion(num, document.querySelector(".num"));</script>
+	<section class="str"></section>
+	<script>accordion(str, document.querySelector(".str"));</script>
+	<section class="everything"></section>
+	<script>accordion(everything, document.querySelector(".everything"));</script>
 </body>
 </html>
