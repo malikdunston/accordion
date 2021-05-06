@@ -107,7 +107,18 @@
 			-	Named functions can go anywhere in the page, script tag can go anywhere in the html, etc....
 				-	However, it is better practice to declare vars as anon functions. The browser saves these during compile phase, which is less performant.
 
-## done
+## Journal
+
+#### 5/6
+
+	-	injected into ui-exploration.git, np
+	-	need to angularify
+
+#### 5/3
+
+	-	no more switch.. simple if/else on typeof data...
+	-	able to get all parents of an elem.
+	-	fold instead of btn event listener...
 
 #### 4/25
 

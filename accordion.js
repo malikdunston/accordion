@@ -4,8 +4,8 @@ const accordion =  (data, elem) => {
 	function iterate() {
 		for ([key, value] of Object.entries(data)) {
 			let btn = document.createElement("button"),
-				cont = document.createElement("div"),
-				fold = document.createElement("div");
+			cont = document.createElement("div"),
+			fold = document.createElement("div");
 			if (!Array.isArray(data)) {
 				btn.innerHTML = key; btn.classList.add("btn");
 				cont.style.overflow = "hidden";	cont.style.maxHeight = "0px"; cont.style.margin = "0px";
@@ -13,11 +13,11 @@ const accordion =  (data, elem) => {
 			}
 			accordion(value, cont);
 			fold.appendChild(cont);
-			fold.addEventListener("click", event => {
-				if(parentsOf(event.target)[0].classList.contains("btn") && cont.style.maxHeight !== "0px" ){
-					cont.style.maxHeight = "0px"
-				}else cont.style.maxHeight = "500vh";
+			btn.addEventListener("click", () => {
 				fold.classList.toggle("open");
+				cont.style.maxHeight !== "0px" ?
+					cont.style.maxHeight = "0px" :
+					cont.style.maxHeight = "500vh";
 			});
 			elem.appendChild(fold);
 		}
@@ -28,7 +28,6 @@ const accordion =  (data, elem) => {
 			els.push(e);
 			e = e.parentNode;
 		}
-	// remove doc, html, body...
 		els.length -= 3; 
 		return els;
 	}
