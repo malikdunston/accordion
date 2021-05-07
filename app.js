@@ -1,7 +1,21 @@
 (function () {
         angular.module("app", [])
-	.controller("appCtrl", function () {
+	.controller("appCtrl", function ($http) {
 		let app = this;
+
+		$http.get("http://api", {
+			params: {
+				institution: 1,
+				children: 1
+			}
+		}).then((resp) => {
+			let r = resp.data[0][0];
+			// r.campuses = [1, 3, "orange", {xtra: "looky here"}]
+			console.log(r);
+			app.ex = r;
+		});
+
+
 		let arr =  [
 			"Person",
 			{about: 'Web Dev', age: "29"},
@@ -17,7 +31,7 @@
 		};
 		let num = 20 + 24;
 		let str = "hello i'm just a string. :) Shoutout to " + num
-		app.ex = obj;
+		// app.ex = obj;
 	})
 	.directive("accordion", function(){
 		// function accordion(data, elem){
@@ -32,10 +46,13 @@
 			},
 			link: function(s, e, a){
 
-				var acc = accordion(s.data, document.createElement("div"));
+				s.$watch("data", function(newVal, oldVal){
+					var acc = accordion(newVal, document.createElement("div"));
+					e[0].appendChild(acc)
+				})
+
 
 				// console.log(s, e[0], a);
-				e[0].appendChild(acc)
 			}
 		}
         });
