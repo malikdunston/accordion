@@ -18,25 +18,24 @@
 		let num = 20 + 24;
 		let str = "hello i'm just a string. :) Shoutout to " + num
 		app.ex = obj;
-		alert("hey");
-		console.log(app);
 	})
 	.directive("accordion", function(){
-		function accordion(data, elem){
-			console.log(data, elem);
-			elem.innerHTML = data;
-			return elem;
-		}
+		// function accordion(data, elem){
+		// 	console.log(data, elem);
+		// 	elem.innerHTML = data;
+		// 	return elem;
+		// }
 		return {
 			restrict: 'A',
 			scope: {
 				data: "<"
 			},
 			link: function(s, e, a){
-				let newElem = document.createElement("h3"),
-				data = s.data;
-				console.log(s, e[0], a);
-				e[0].appendChild(accordion(data, newElem))
+
+				var acc = accordion(s.data, document.createElement("div"));
+
+				// console.log(s, e[0], a);
+				e[0].appendChild(acc)
 			}
 		}
         });
