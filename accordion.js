@@ -1,5 +1,5 @@
 const accordion =  (data, elem) => {
-	typeof data == "object" ? iterate() : elem.innerHTML = data;
+	(typeof data == "object" && data !== null) ? iterate() : elem.innerHTML = data;
 	return elem;
 	function iterate() {
 		for ([key, value] of Object.entries(data)) {
