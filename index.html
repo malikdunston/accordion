@@ -1,47 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<base href="/">
 	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Accordion</title>
-	<script>
-		const arr = [
-			"Person",
-			{about: 'Web Dev', age: "29"},
-			{skills: [
-				"PS",
-				"VSCode"
-			]}
-		];
-		const obj = {
-			name: arr[0],
-			details: arr[1],
-			work: arr[2]
-		};
-		const num = 20 + 24;
-		const str = "hello i'm just a string. :) Shoutout to " + num;
-		const everything = {
-			obj,
-			arr,
-			num,
-			str
-		}
-	</script>
-	<script src="accordion.js"></script>
-<!-- Optional styles -->
+	<title>Accordion - AJS Version</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+
 	<link rel="stylesheet" href="visuals.css">
+
+	<script src="app.js"></script>
 </head>
-<body>
-	<section class="obj"></section>
-	<script>accordion(obj, document.querySelector(".obj"));</script>
-	<section class="arr"></section>
-	<script>accordion(arr, document.querySelector(".arr"));</script>
-	<section class="num"></section>
-	<script>accordion(num, document.querySelector(".num"));</script>
-	<section class="str"></section>
-	<script>accordion(str, document.querySelector(".str"));</script>
-	<section class="everything"></section>
-	<script>accordion(everything, document.querySelector(".everything"));</script>
+<body ng-app="app" ng-controller="appCtrl as app">
+	<nav accordion data="app.ex"></nav>
 </body>
 </html>
