@@ -6,15 +6,47 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Accordion - AJS Version</title>
-
+	<script>
+		window.arr = [
+			"Person",
+			{about: 'Web Dev', age: "29"},
+			{skills: [
+				"PS",
+				"VSCode"
+			]}
+		];
+		window.obj = {
+			name: arr[0],
+			details: arr[1],
+			work: arr[2]
+		};
+		window.num = 20 + 24;
+		window.str = "hello i'm just a string. :) Shoutout to " + num;
+		window.everything = {
+			obj,
+			arr,
+			num,
+			str
+		}
+	</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
-
-	<link rel="stylesheet" href="visuals.css">
-
 	<script src="accordion.js"></script>
-	<script src="app.js"></script>
+<!-- Optional styles -->
+	<link rel="stylesheet" href="visuals.css">
 </head>
 <body ng-app="app" ng-controller="appCtrl as app">
-	<nav accordion data="app.ex"></nav>
+	<section accordion data="app.data.obj"></section>
+	<section accordion data="app.data.arr"></section>
+	<section accordion data="app.data.num"></section>
+	<section accordion data="app.data.str"></section>
+	<script>
+		(function () {
+			angular.module("app", ["accordion"])
+			.controller("appCtrl", function ($window) {
+				let app = this;
+				app.data = $window.everything;
+			})
+		})()		
+	</script>
 </body>
 </html>
