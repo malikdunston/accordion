@@ -9,12 +9,8 @@
 				children: 1
 			}
 		}).then((resp) => {
-			let r = resp.data[0][0];
-			// r.campuses = [1, 3, "orange", {xtra: "looky here"}]
-			console.log(r);
-			app.ex = r;
+			app.ex = resp.data[0][0];
 		});
-
 
 		let arr =  [
 			"Person",
