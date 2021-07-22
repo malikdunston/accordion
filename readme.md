@@ -1,6 +1,6 @@
 # Nested Accordion
 
--	An attempt to represent json in foldable, nested dom elements.
+-	Representing json in foldable, nested dom elements.
 -	simple wrapper with two children - the first toggling the second's height
 -	add class "fold", and simple event listener using querySelectorAll.
 
